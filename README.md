@@ -39,7 +39,7 @@
 
 常见问题：如何启用系统键盘（设置 → 通用 → 键盘 → 键盘 → 添加新键盘 → 双键；如需键盘音再开启「允许完全访问」）。
 
-- 使用问题、Bug、功能建议：请开 [Issue](https://github.com/zylcold/dualkey/issues)
+- 使用问题、Bug、功能建议：请开 [Issue](https://github.com/zylcold/dualkey-site/issues)
 - 邮件：support@dualkey.app
 
 ## 隐私
