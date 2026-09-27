@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>使用支持 - DualKey</title>
     <meta name="description" content="DualKey 双拼键盘使用指南、常见问题解答与联系方式。">
     <link rel="icon" type="image/png" sizes="180x180" href="assets/img/icon-180.png">
@@ -28,7 +28,10 @@
             --shadow-md: 0 4px 16px rgba(15,23,42,0.08);
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: clip;
+        }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
@@ -37,6 +40,9 @@
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-wrap: break-word;
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
         }
 
         nav {
@@ -290,9 +296,9 @@
                 <span>DualKey</span>
             </a>
             <div class="nav-links">
-                <a href="index.html">首页</a>
-                <a href="index.html#features">功能</a>
-                <a href="privacy.html">隐私</a>
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="index.html#features" class="nav-link">功能</a>
+                <a href="privacy.html" class="nav-link">隐私</a>
             </div>
         </div>
     </nav>
