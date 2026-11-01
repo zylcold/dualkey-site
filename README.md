@@ -1,59 +1,51 @@
 # 双键 · DualKey
 
-> 双拼输入法练习与离线系统键盘 —— 从零建立双拼肌肉记忆。
+双键的产品网站、使用支持与隐私政策。App 源码不在本仓库发布。
 
-[![App Store](https://img.shields.io/badge/App%20Store-下载-0D96F6?logo=appstore&logoColor=white)](https://apps.apple.com/cn/app/id6803302251)
+- [官网](https://zylcold.github.io/dualkey-site/)
+- [App Store](https://apps.apple.com/cn/app/id6803302251)
+- [使用支持](https://zylcold.github.io/dualkey-site/support.html)
+- [隐私政策](https://zylcold.github.io/dualkey-site/privacy.html) / [Markdown 版本](./PRIVACY.md)
+- [版本更新记录](./CHANGELOG.md)
 
-🌐 官网：https://zylcold.github.io/dualkey-site/
+## 产品
 
-本仓库是双键的公开项目主页：**产品说明、版本更新记录（release notes）、使用支持与隐私政策**在这里维护。App 源码为私有仓库，不在此发布。
+双键是一款以日常输入为核心的 iOS 双拼键盘，支持小鹤、微软与搜狗双拼。键位提示、个性皮肤、单手模式和离线候选服务日常输入；引导练习、长文跟打及双拼打砖块帮助熟悉键位。
 
-## 是什么
+键盘核心输入、候选与触感在设备上完成，无需为日常输入开启「完全访问」。可选系统键盘音受 iOS 权限限制。主 App 主动提交反馈、购买与恢复购买可能联网；具体数据范围见隐私政策。
 
-双键（DualKey）内置可全系统使用的双拼输入法键盘，并提供配套的双拼练习工具。目标不是背键位表，而是打通这条输入链路：
+## 网站结构
 
-**汉字 → 标准拼音 → 双拼编码 → 键位 → 手指动作**
+网站使用静态 HTML、CSS 和 JavaScript，不需要安装依赖或构建。
 
-## 核心功能
+- `site/index.html`：产品介绍、双拼演示、皮肤切换及视频。
+- `site/privacy.html`：隐私政策。
+- `site/support.html`：使用指南、常见问题及联系方式。
+- `site/style.css` / `site/documents.css`：共享视觉、响应式与文档样式。
+- `site/script.js`：首页交互。
+- `site/assets/`：图片、图标与宣传视频。
 
-### ⌨️ 系统键盘
+所有站内资源使用相对路径，同时兼容 GitHub Pages 的 `/dualkey-site/` 子路径与独立站点根路径。保留原有隐私和支持页面 URL。
 
-- **全局可用**：任意 App 中长按地球键切换到双键
-- **离线候选**：内置 65,105 条 AOSP 离线词库，全程无网络、零上传
-- **双拼提示**：每个键实时显示当前方案的声母 / 韵母
-- **智能输入**：shift 大小写、候选联想、空格首选、数字符号页，回车键跟随场景切换（发送 / 搜索 / 换行）
+本地预览：
 
-### 🎯 双拼练习
+```sh
+python3 -m http.server 8000 --directory site
+```
 
-- **引导模式**：显示拼音 → 双拼映射，逐步建立记忆
-- **实战模式**：不提示答案，检验真实水平
-- **长文实战**：名著节选逐字输入，连击挑战
-- **键位图与统计面板**：正确率、速度、薄弱键位一目了然
+打开 `http://localhost:8000`。修改脚本后可运行 `node --check site/script.js`；提交前运行 `git diff --check`。浏览器检查应覆盖手机与桌面布局、图片比例、五套皮肤、双拼演示、视频关闭暂停、启用指南及两个文档页。
 
-### 🔓 方案与解锁
+## 发布
 
-- **小鹤双拼**：永久免费
-- **微软双拼 / 搜狗双拼**：一次性买断，练习与系统键盘通用，支持恢复购买
-
-键盘无需「允许完全访问」即可使用全部核心功能；仅可选的系统键盘音需要完全访问。
+现有 GitHub Actions 工作流在 `main` 分支的 `site/` 发生变化后发布 GitHub Pages。PR 本身不会更新正式官网；审阅并合并后才会触发发布。
 
 ## 支持
 
-常见问题：如何启用系统键盘（设置 → 通用 → 键盘 → 键盘 → 添加新键盘 → 双键；如需键盘音再开启「允许完全访问」）。
+- App 内：设置 → 改进建议，可选择附图和诊断日志。
+- 使用问题：support@dualkey.app
+- 隐私请求：privacy@dualkey.app
+- [GitHub Issues](https://github.com/zylcold/dualkey-site/issues) 为公开渠道，请勿提交敏感信息。
 
-- 使用问题、Bug、功能建议：请开 [Issue](https://github.com/zylcold/dualkey-site/issues)
-- 邮件：support@dualkey.app
+## 内容与许可
 
-## 隐私
-
-双键完全离线运行，不收集任何数据。完整说明见 [PRIVACY.md](./PRIVACY.md)。
-
-## 版本更新
-
-见 [CHANGELOG.md](./CHANGELOG.md)。
-
-## 许可
-
-本仓库内容（文档）版权归作者所有。App 为闭源商业软件。
-
-内置离线词库源自 AOSP PinyinIME（Apache License 2.0），许可声明见 App 内「关于」页。
+本仓库文档版权归作者所有。App 为闭源软件。产品图与视频使用开发者提供的界面截图，以及本次设计生成的宣传元素；皮肤展示中的名称用于描述视觉风格。App 内 AOSP 来源离线词库的许可见应用内声明。
